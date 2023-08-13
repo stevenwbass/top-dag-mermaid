@@ -1,79 +1,76 @@
-# TypeScript Library Starter
+# top-dag-mermaid
 
-![NPM](https://img.shields.io/npm/l/@gjuchault/typescript-library-starter)
-![NPM](https://img.shields.io/npm/v/@gjuchault/typescript-library-starter)
-![GitHub Workflow Status](https://github.com/gjuchault/typescript-library-starter/actions/workflows/typescript-library-starter.yml/badge.svg?branch=main)
+### Add NPM Token
 
-Yet another (opinionated) TypeScript library starter template.
+Add your npm token to your GitHub repository secrets as `NPM_TOKEN`.
 
-## Opinions and limitations
+### Add Codecov integration
 
-1. Relies as much as possible on each included library's defaults
-2. Only relies on GitHub Actions
-3. Does not include documentation generation
+Enable the Codecov GitHub App [here](https://github.com/apps/codecov).
 
-## Getting started
+**Remove everything from here and above**
 
-1. `npx degit gjuchault/typescript-library-starter my-project` or click on the `Use this template` button on GitHub!
-2. `cd my-project`
-3. `npm install`
-4. `git init` (if you used degit)
-5. `npm run setup`
+---
 
-To enable deployment, you will need to:
+# top-dag-mermaid
 
-1. Set up the `NPM_TOKEN` secret in GitHub Actions ([Settings > Secrets > Actions](https://github.com/gjuchault/typescript-service-starter/settings/secrets/actions))
-2. Give `GITHUB_TOKEN` write permissions for GitHub releases ([Settings > Actions > General](https://github.com/gjuchault/typescript-service-starter/settings/actions) > Workflow permissions)
+[![npm package][npm-img]][npm-url]
+[![Build Status][build-img]][build-url]
+[![Downloads][downloads-img]][downloads-url]
+[![Issues][issues-img]][issues-url]
+[![Code Coverage][codecov-img]][codecov-url]
+[![Commitizen Friendly][commitizen-img]][commitizen-url]
+[![Semantic Release][semantic-release-img]][semantic-release-url]
 
-## Features
+> My awesome module
 
-### Node.js, npm version
+## Install
 
-TypeScript Library Starter relies on [Volta](https://volta.sh/) to ensure the Node.js version is consistent across developers. It's also used in the GitHub workflow file.
+```bash
+npm install top-dag-mermaid
+```
 
-### TypeScript
+## Usage
 
-Leverages [esbuild](https://github.com/evanw/esbuild) for blazing-fast builds but keeps `tsc` to generate `.d.ts` files.
-Generates a single ESM build.
+```ts
+import { myPackage } from 'top-dag-mermaid';
 
-Commands:
+myPackage('hello');
+//=> 'hello from my package'
+```
 
-- `build`: runs type checking, then ESM and `d.ts` files in the `build/` directory
-- `clean`: removes the `build/` directory
-- `type:dts`: only generates `d.ts`
-- `type:check`: only runs type checking
-- `type:build`: only generates ESM
+## API
 
-### Tests
+### myPackage(input, options?)
 
-TypeScript Library Starter uses [Vitest](https://vitest.dev/). Coverage is done through Vitest, using [c8](https://github.com/bcoe/c8).
+#### input
 
-Commands:
+Type: `string`
 
-- `test`: runs Vitest test runner
-- `test:watch`: runs Vitest test runner in watch mode
-- `test:coverage`: runs Vitest test runner and generates coverage reports
+Lorem ipsum.
 
-### Format & lint
+#### options
 
-This template relies on the combination of [ESLint](https://github.com/eslint/eslint) — through [TypeScript-ESLint](https://github.com/typescript-eslint/typescript-eslint) for linting, and [Prettier](https://github.com/prettier/prettier) for formatting.
-It also uses [cspell](https://github.com/streetsidesoftware/cspell) to ensure correct spelling.
+Type: `object`
 
-Commands:
+##### postfix
 
-- `format`: runs Prettier with automatic fixing
-- `format:check`: runs Prettier without automatic fixing (used in CI)
-- `lint`: runs ESLint with automatic fixing
-- `lint:check`: runs ESLint without automatic fixing (used in CI)
-- `spell:check`: runs spell checking
+Type: `string`
+Default: `rainbows`
 
-### Releasing
+Lorem ipsum.
 
-Under the hood, this library uses [semantic-release](https://github.com/semantic-release/semantic-release) and [Commitizen](https://github.com/commitizen/cz-cli).
-The goal is to avoid manual release processes. Using `semantic-release` will automatically create a GitHub release (hence tags) as well as an npm release.
-Based on your commit history, `semantic-release` will automatically create a patch, feature, or breaking release.
-
-Commands:
-
-- `cz`: interactive CLI that helps you generate a proper git commit message, using [Commitizen](https://github.com/commitizen/cz-cli)
-- `semantic-release`: triggers a release (used in CI)
+[build-img]:https://github.com/stevenwbass/top-dag-mermaid/actions/workflows/release.yml/badge.svg
+[build-url]:https://github.com/stevenwbass/top-dag-mermaid/actions/workflows/release.yml
+[downloads-img]:https://img.shields.io/npm/dt/top-dag-mermaid
+[downloads-url]:https://www.npmtrends.com/top-dag-mermaid
+[npm-img]:https://img.shields.io/npm/v/top-dag-mermaid
+[npm-url]:https://www.npmjs.com/package/top-dag-mermaid
+[issues-img]:https://img.shields.io/github/issues/stevenwbass/top-dag-mermaid
+[issues-url]:https://github.com/stevenwbass/top-dag-mermaid/issues
+[codecov-img]:https://codecov.io/gh/stevenwbass/top-dag-mermaid/branch/main/graph/badge.svg
+[codecov-url]:https://codecov.io/gh/stevenwbass/top-dag-mermaid
+[semantic-release-img]:https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-release-url]:https://github.com/semantic-release/semantic-release
+[commitizen-img]:https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
+[commitizen-url]:http://commitizen.github.io/cz-cli/

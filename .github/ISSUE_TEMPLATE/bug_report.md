@@ -1,31 +1,28 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: "🐛 Bug Report"
+about: Report a reproducible bug or regression.
 title: ''
-labels: ''
+labels: bug
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## Current Behavior
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. 
-2. 
-3. 
+<!-- Describe how the issue manifests. -->
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+## Expected Behavior
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+<!-- Describe what the desired behavior would be. -->
 
-**Desktop (please complete the following information):**
- - OS: [e.g. Ubuntu 22.04, macOS 11.4]
- - Node version [e.g 16.4.2]
- - Code Version [e.g. 1.1.0]
+## Steps to Reproduce the Problem
 
-**Additional context**
-Add any other context about the problem here.
+  1.
+  1.
+  1.
+
+## Environment
+
+- Version: <!-- Version set in package.json -->
+- Platform: <!-- Win/Mac/Linux -->
+- Node.js Version: <!-- Output of running `node -v` -->
