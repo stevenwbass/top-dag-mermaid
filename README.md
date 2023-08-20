@@ -44,7 +44,13 @@ Type: `object`
 Type: `string`
 Default: `rainbows`
 
-Lorem ipsum.
+The most convenient way to debug tests is to use VS Code's built-in "Run and Debug" (Ctrl+Shift+D). The project has a `launch.json` file to support this (on Windows), but you will still have to select the "Debug Jest Tests" script next to "RUN AND DEBUG".
+
+To debug in any Chromium-based browser:
+  1. execute `npm run test:debug`
+  2. open the browser and go to chrome://inspect
+  3. click on "Open Dedicated DevTools for Node"
+  4. click on the address displayed in the terminal (usually something like localhost:9229)
 
 [build-img]:https://github.com/stevenwbass/top-dag-mermaid/actions/workflows/release.yml/badge.svg
 [build-url]:https://github.com/stevenwbass/top-dag-mermaid/actions/workflows/release.yml

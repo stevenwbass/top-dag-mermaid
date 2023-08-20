@@ -1,15 +1,15 @@
-import { transformDagToFlowchart, Dictionary, HashSet } from '../src';
+import { transformDagToFlowchart, Dictionary } from '../src';
 
-class TestDag<TKey, TData> {
-  data: Dictionary<TKey, TData>;
-  incomingEdges: Dictionary<TKey, HashSet<TKey>>;
-  outgoingEdges: Dictionary<TKey, HashSet<TKey>>;
+class TestDag<TData> {
+  data: Dictionary<TData>;
+  incomingEdges: Dictionary<Array<string>>;
+  outgoingEdges: Dictionary<Array<string>>;
   count: number;
 
   constructor() {
-    this.data = new Dictionary<TKey, TData>();
-    this.incomingEdges = new Dictionary<TKey, HashSet<TKey>>();
-    this.outgoingEdges = new Dictionary<TKey, HashSet<TKey>>();
+    this.data = new Dictionary<TData>();
+    this.incomingEdges = new Dictionary<Array<string>>();
+    this.outgoingEdges = new Dictionary<Array<string>>();
     this.count = 0;
   }
 }
@@ -17,10 +17,28 @@ class TestDag<TKey, TData> {
 describe('index', () => {
   describe('transformDagToFlowchart', () => {
     it('should return a string representing the mermaid flowchart', () => {
-      const dag = new TestDag<string, number>();
+      let dag = JSON.parse(`{
+  "data": {
+    "first": "first-data",
+    "second": "second-data",
+    "third": "third-data",
+    "fourth": "fourth-data"
+  },
+  "outgoingEdges": {
+    "first": [
+      "second",
+      "third"
+    ],
+    "second": [],
+    "third": [
+      "fourth"
+    ],
+    "fourth": []
+  }
+}`);
 
       const result = transformDagToFlowchart(dag);
-
+      const expected = "flowchart TD\nfirst --> second\nfirst --> third\nsecond\nthird --> fourth\nfourth\n";
       expect(result).toMatch("flowchart TD");
     });
   });
