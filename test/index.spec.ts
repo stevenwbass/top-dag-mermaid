@@ -17,7 +17,7 @@ class TestDag<TData> {
 describe('index', () => {
   describe('transformDagToFlowchart', () => {
     it('should return a string representing the mermaid flowchart', () => {
-      let dag = JSON.parse(`{
+      const dag = JSON.parse(`{
   "data": {
     "first": "first-data",
     "second": "second-data",
@@ -38,8 +38,9 @@ describe('index', () => {
 }`);
 
       const result = transformDagToFlowchart(dag);
-      const expected = "flowchart TD\nfirst --> second\nfirst --> third\nsecond\nthird --> fourth\nfourth\n";
-      expect(result).toMatch("flowchart TD");
+      const expected =
+        'flowchart LR\nfirst --> second\nfirst --> third\nsecond\nthird --> fourth\nfourth\n';
+      expect(result).toMatch(expected);
     });
   });
 });
