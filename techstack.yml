@@ -2,7 +2,7 @@ repo_name: stevenwbass/top-dag-mermaid
 report_id: 586070f47f47a6c29b0ddeac87d498e9
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T09:19:48+00:00'
+timestamp: '2024-02-29T18:09:26+00:00'
 requested_by: stevenwbass
 provider: github
 branch: main
@@ -95,7 +95,7 @@ tools:
   last_updated_by: Steven Bass
   last_updated_on: 2023-08-11 23:51:12.000000000 Z
 - name: Prettier
-  description: 'Prettier is an opinionated code formatter. '
+  description: Prettier is an opinionated code formatter.
   website_url: https://prettier.io/
   version: 2.8.8
   license: MIT
